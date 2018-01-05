@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/ProfilleEchantillonsadd','ProfilleEchantillonsController@add');
+Route::post('addProfilleEchantillons','ProfilleEchantillonsController@addtobd');
+Route::get('/ProfilleEchantillonsadd','ProfilleEchantillonsController@update');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
